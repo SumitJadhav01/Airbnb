@@ -9,7 +9,7 @@ const ejsmate = require("ejs-mate");
 const path = require("path");
 const expressErr = require("./utils/expressErr.js");
 const session = require ("express-session");
-const mongoSrote = require("connect-mongo");
+const MongoSrote = require("connect-mongo");
 const flash = require ("connect-flash");
 const passport = require ("passport");
 const LocalStrategy = require ("passport-local");
@@ -19,7 +19,7 @@ const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const dburl = process.env.ATLASDB_URL;
 
-const store =mongoSrote.create({
+const store =MongoSrote.create({
     mongoUrl:dburl,
     crypto:{
       secret:process.env.SECRET,
